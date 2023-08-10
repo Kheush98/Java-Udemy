@@ -3,13 +3,16 @@ class Student {
 	byte age = 18;
     short rank = 165; //[-128, 127]
     long phone = 22_345_678_90L; //Java -- readability we can make underscore for better lisibility
-    
-    // Integer literals: int literal, long literal
-    int maxValue = Integer.MAX_VALUE; 
-    int minValue = Integer.MIN_VALUE;
 
-    byte maxValueB = Byte.MAX_VALUE; 
-    byte minValueB = Byte.MIN_VALUE; 
+    double gpa = 3.8; //we can add d at the end of the value like 3.8d but we can omit it because double is the default type
+    float gpa2 = 3.8f; // here we must add mandatorily 'f' at the end
+
+    // Integer literals: int literal, long literal
+    // int maxValue = Integer.MAX_VALUE; 
+    // int minValue = Integer.MIN_VALUE;
+
+    // byte maxValueB = Byte.MAX_VALUE; 
+    // byte minValueB = Byte.MIN_VALUE; 
 
 	void compute() {	    
 		int nextId = id + 1;
@@ -18,10 +21,7 @@ class Student {
 		System.out.println("nextId: " + nextId);
 		System.out.println("age: " + age);
 		System.out.println("phone: " + phone); // print 2234567890 instead of 22_345_678_90
-		System.out.println("max int: " + maxValue);
-		System.out.println("min int: " + minValue);
-		System.out.println("max byte: " + maxValueB);
-		System.out.println("min byte: " + minValueB);
+		System.out.println("gpa: " + gpa);
 	}
 	
 	public static void main(String[] args) {

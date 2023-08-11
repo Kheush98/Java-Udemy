@@ -7,6 +7,8 @@ class Student {
     double gpa = 3.8; //we can add d at the end of the value like 3.8d but we can omit it because double is the default type
     float gpa2 = 3.8f; // here we must add mandatorily 'f' at the end
 
+	char degree = 'B'; // or char degree = '\u0042'; 0042 == 66 == B (hexadecimal)
+
     // Integer literals: int literal, long literal
     // int maxValue = Integer.MAX_VALUE; 
     // int minValue = Integer.MIN_VALUE;
@@ -22,6 +24,7 @@ class Student {
 		System.out.println("age: " + age);
 		System.out.println("phone: " + phone); // print 2234567890 instead of 22_345_678_90
 		System.out.println("gpa: " + gpa);
+		System.out.println("degree: " + degree);
 	}
 	
 	public static void main(String[] args) {

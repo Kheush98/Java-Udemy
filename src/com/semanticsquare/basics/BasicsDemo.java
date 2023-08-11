@@ -24,6 +24,27 @@ class BasicsDemo {
     //Octal representation
     int intOctal = 0101; // start with 0 
     System.out.println("intOctal = " + intOctal);
+
+    //Differnt representation of Type char
+    int intChar = 'A'; //No error compilation
+    System.out.println("intChar = " + intChar); //print '65' instead of 'A'
+
+    //Decimal representation
+    char charInt = 65;
+    System.out.println("charInt = " + charInt); // print 'A';
+
+    //Hexadecimal representation
+    char charHex = 0x0041;
+    System.out.println("charHex = " + charHex); // print 'A';
+
+    //Binary representation
+    char charBinary = 0b010_00001;
+    System.out.println("charBinary = " + charBinary); // print 'A';
+
+    //Octal representation
+    char charOctal = 0101;
+    System.out.println("charOctal = " + charOctal); // print 'A';
+
   }
   
   public static void main(String[] args) {	

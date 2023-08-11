@@ -9,6 +9,10 @@ class Student {
 
 	char degree = 'B'; // or char degree = '\u0042'; 0042 == 66 == B (hexadecimal)
 
+	boolean international = true; 
+	double tuitionFee = 12000.0;
+	double internationalFee = 5000.0;
+
     // Integer literals: int literal, long literal
     // int maxValue = Integer.MAX_VALUE; 
     // int minValue = Integer.MIN_VALUE;
@@ -19,12 +23,17 @@ class Student {
 	void compute() {	    
 		int nextId = id + 1;
 		
+		if (international) {
+			tuitionFee += internationalFee;
+		}
+
 	    System.out.println("id: " + id);
 		System.out.println("nextId: " + nextId);
 		System.out.println("age: " + age);
 		System.out.println("phone: " + phone); // print 2234567890 instead of 22_345_678_90
 		System.out.println("gpa: " + gpa);
 		System.out.println("degree: " + degree);
+		System.out.println("tuition Fee: " + tuitionFee);
 	}
 	
 	public static void main(String[] args) {

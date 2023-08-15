@@ -42,8 +42,8 @@ static void primitives() {
     int x = (int)y;
     
     // Information loss due to out-of-range assignment
-    byte narrowdByte = (byte)123456;
-  System.out.println("narrowdByte: " + narrowdByte); 
+    byte narrowdByte = (byte)123456; 
+    System.out.println("narrowdByte: " + narrowdByte); 
   
   // Truncation
   int iTruncated = (int)0.99;
@@ -131,12 +131,39 @@ static void primitives() {
                           
    System.out.println("unitsSold[0][3][1]: " + unitsSold[0][3][1]);
  }
-public static void main(String[] args) {	
+
+  static float sum(double x, double y) {
+    return (float) (x + y);
+  }
+
+  static double avg(double x, double y) {
+    double sum = sum (x, y);
+    return sum/2;
+  }
+
+  static boolean search(int[] list, int key) {
+    return true;
+  }
+  
+  static void go(int[] tab) {
+    System.out.println("array[0] :" + tab[0]);
+	System.out.println("array[1] :" + tab[1]);
+	tab[1] = 22;
+  }
+
+  public static void main(String[] args) {	
   // Language Basics 1
   //print();				
   //primitives();
   // typeCasting(); 
   // arrays();
-  threeDimensionalArrays();
+  // threeDimensionalArrays();
+  //double sum = sum(3.0, 2.0);
+  //System.out.println("sum = " + sum);
+  //double avg = avg(3.0,2.0);
+  //System.out.println("avg = " + avg);
+  int[] array = {1, 2};
+  go(array);
+  System.out.println("array[1] :" + array[1]);
   }       
 }

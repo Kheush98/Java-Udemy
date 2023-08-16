@@ -34,6 +34,17 @@ class Student {
     boolean international; 
     double tuitionFee = 12000.0;
     double internationalFee = 5000.0;
+	
+	Student(int newId, String newName, String newGender, int newAge, long newPhone, double newGpa, char newDegree, boolean isInternational) {
+		id = newId;
+		name = newName;
+		gender = newGender;
+		age = newAge;
+		phone = newPhone;
+		gpa = newGpa;
+		degree = newDegree;
+		international = isInternational;
+	}
 
     // Integer literals: int literal, long literal
     // int maxValue = Integer.MAX_VALUE; 
@@ -63,31 +74,13 @@ class Student {
 	}
 	
 	public static void main(String[] args) {
-	    Student student1 = new Student();
-	    student1.id = 1000;
-	    student1.name = "Cheikh";
-	    student1.gender = "male";
-	    student1.age = 18;
-	    student1.rank = 65;
-	    student1.phone = 22_345_678_90L;
-	    student1.gpa = 3.8;
-	    student1.degree = 'B';
-	    student1.international = false;
+	    Student student1 = new Student(1000, "Cheikh", "male", 18, 65, 22_345_678_90L, 3.8, 'B', false);
 		student1.compute();
 
-	    Student student2 = new Student();
-	    student2.id = 1001;
-	    student2.name = "Fatima";
-	    student2.gender = "female";
-	    student2.age = 20;
-	    student2.rank = 60;
-	    student2.phone = 22_385_488_90L;
-	    student2.gpa = 3.1;
-	    student2.degree = 'C';
-	    student2.international = true;
+	    Student student2 = new Student(1001, "Fatima", "female", 20, 60, 22_385_488_90L, 3.1, 'C', true);
 		student2.compute();
 
-	    Student student3 = new Student();
+	    Student student3 = new Student(1002, "Anita");
 	    student3.id = 1002;
 	    student3.name = "Anita";
 	    student3.gender = "female";

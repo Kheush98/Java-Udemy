@@ -18,7 +18,7 @@
 	Instance & static variables are also referred to as fields or attributes. Attributes is probably more commonly associated with instance variables. 
 */
 class Student {    
-	static int compterCount;
+	static int studentCount;
     int id;	
     String name;
     String gender;
@@ -35,26 +35,22 @@ class Student {
     double tuitionFee = 12000.0;
     double internationalFee = 5000.0;
 	
-	Student(int newId, String newName, String newGender, int newAge, long newPhone, double newGpa, char newDegree, boolean isInternational) {
+	Student(int newId, String newName, String newGender, int newAge, short newRank, long newPhone, double newGpa, char newDegree) {
+		this(newId, newName, newGender, newAge, newRank, newPhone, newGpa, newDegree, false);
+	}
+	
+	Student(int newId, String newName, String newGender, int newAge, short newRank, long newPhone, double newGpa, char newDegree, boolean isInternational) {
 		id = newId;
 		name = newName;
 		gender = newGender;
 		age = newAge;
+		rank = newRank;
 		phone = newPhone;
 		gpa = newGpa;
 		degree = newDegree;
 		international = isInternational;
-	}
-
-    // Integer literals: int literal, long literal
-    // int maxValue = Integer.MAX_VALUE; 
-    // int minValue = Integer.MIN_VALUE;
-
-    // byte maxValueB = Byte.MAX_VALUE; 
-    // byte minValueB = Byte.MIN_VALUE; 
-
-	void compute() {	    
-		compterCount++;
+		
+		studentCount++;
 		int nextId = id + 1;
 		
 		if (international) {
@@ -70,28 +66,23 @@ class Student {
 		System.out.println("gpa: " + gpa);
 		System.out.println("degree: " + degree);
 		System.out.println("tuition Fee: " + tuitionFee);
-		System.out.println("compter count: " + compterCount);
+		System.out.println("Student count: " + studentCount);
 	}
-	
+
+    // Integer literals: int literal, long literal
+    // int maxValue = Integer.MAX_VALUE; 
+    // int minValue = Integer.MIN_VALUE;
+
+    // byte maxValueB = Byte.MAX_VALUE; 
+    // byte minValueB = Byte.MIN_VALUE; 
+
 	public static void main(String[] args) {
-	    Student student1 = new Student(1000, "Cheikh", "male", 18, 65, 22_345_678_90L, 3.8, 'B', false);
-		student1.compute();
+	    Student student1 = new Student(1000, "Cheikh", "male", 18, (short) 65, 22_345_678_90L, 3.8, 'B', false);
 
-	    Student student2 = new Student(1001, "Fatima", "female", 20, 60, 22_385_488_90L, 3.1, 'C', true);
-		student2.compute();
+	    Student student2 = new Student(1001, "Fatima", "female", 20, (short) 60, 22_385_488_90L, 3.1, 'C', true);
 
-	    Student student3 = new Student(1002, "Anita");
-	    student3.id = 1002;
-	    student3.name = "Anita";
-	    student3.gender = "female";
-	    student3.age = 20;
-	    student3.rank = 60;
-	    student3.phone = 22_385_88888L;
-	    student3.gpa = 4.0;
-	    student3.degree = 'M';
-	    student3.international = true;
-		student3.compute();
+	    Student student3 = new Student(1002, "Anita", "female", 20, (short) 62, 22_385_88888L, 4.0, 'M', true);
 
-		System.out.println("Student.computeCount: " + Student.compterCount);
+		System.out.println("Student.studentCount: " + Student.studentCount);
 	}
 }

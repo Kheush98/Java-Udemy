@@ -39,16 +39,16 @@ class Student {
 		this(newId, newName, newGender, newAge, newRank, newPhone, newGpa, newDegree, false);
 	}
 	
-	Student(int newId, String newName, String newGender, int newAge, short newRank, long newPhone, double newGpa, char newDegree, boolean isInternational) {
-		id = newId;
-		name = newName;
-		gender = newGender;
-		age = newAge;
-		rank = newRank;
-		phone = newPhone;
-		gpa = newGpa;
-		degree = newDegree;
-		international = isInternational;
+	Student(int id, String name, String gender, int age, short rank, long phone, double gpa, char degree, boolean international) {
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+		this.age = age;
+		this.rank = rank;
+		this.phone = phone;
+		this.gpa = gpa;
+		this.degree = degree;
+		this.international = international;
 		
 		studentCount++;
 		int nextId = id + 1;
@@ -57,16 +57,21 @@ class Student {
 			tuitionFee += internationalFee;
 		}
 
-	    System.out.println("\nid: " + id);
+	    System.out.println("\nid: " + this.id);
 		System.out.println("nextId: " + nextId);
-		System.out.println("name: " + name);
-		System.out.println("gender: " + gender);
-		System.out.println("age: " + age);
-		System.out.println("phone: " + phone); // print 2234567890 instead of 22_345_678_90
-		System.out.println("gpa: " + gpa);
-		System.out.println("degree: " + degree);
+		System.out.println("name: " + this.name);
+		System.out.println("gender: " + this.gender);
+		System.out.println("age: " + this.age);
+		System.out.println("phone: " + this.phone); // print 2234567890 instead of 22_345_678_90
+		System.out.println("gpa: " + this.gpa);
+		System.out.println("degree: " + this.degree);
 		System.out.println("tuition Fee: " + tuitionFee);
 		System.out.println("Student count: " + studentCount);
+	}
+	
+	boolean updateProfile(String name) {
+		this.name = name;
+		return true;
 	}
 
     // Integer literals: int literal, long literal
@@ -77,12 +82,19 @@ class Student {
     // byte minValueB = Byte.MIN_VALUE; 
 
 	public static void main(String[] args) {
-	    Student student1 = new Student(1000, "Cheikh", "male", 18, (short) 65, 22_345_678_90L, 3.8, 'B', false);
+	    Student student1 = new Student(1000, "John", "male", 18, (short) 65, 22_345_678_90L, 3.8, 'B', false);
 
 	    Student student2 = new Student(1001, "Fatima", "female", 20, (short) 60, 22_385_488_90L, 3.1, 'C', true);
 
 	    Student student3 = new Student(1002, "Anita", "female", 20, (short) 62, 22_385_88888L, 4.0, 'M', true);
 
 		System.out.println("Student.studentCount: " + Student.studentCount);
+		System.out.println("\nStudent 1: " + student1.name);
+		System.out.println("\nStudent 2: " + student2.name);
+		System.out.println("\nStudent 3: " + student3.name);
+		
+		student1.updateProfile("Cheikh");
+		
+		System.out.println("\nStudent 1: " + student1.name);
 	}
 }

@@ -83,21 +83,21 @@ static void primitives() {
     System.out.println("Project: " + scores[3]);
     System.out.println("Lenght: " + scores.length);
 
-    Student[] students = new Student[3];
-    students[0] = new Student();
-    students[1] = new Student();
-    students[2] = new Student();
+    // Student[] students = new Student[3];
+    // students[0] = new Student();
+    // students[1] = new Student();
+    // students[2] = new Student();
     //other way to declare arrays variables (object)
     /* 
       Student[] students = new Student[3] {new Student(), new Student(), new Student()}; 
       Student[] students = {new Student(), new Student(), new Student()}; 
     */
-    students[0].name = "Cheikh";
-    students[1].name = "Fatima";
-    students[2].name = "Kheush";
-    System.out.println("Student 1: " + students[0].name);
-    System.out.println("Student 2: " + students[1].name);
-    System.out.println("Student 2: " + students[2].name);
+    // students[0].name = "Cheikh";
+    // students[1].name = "Fatima";
+    // students[2].name = "Kheush";
+    // System.out.println("Student 1: " + students[0].name);
+    // System.out.println("Student 2: " + students[1].name);
+    // System.out.println("Student 2: " + students[2].name);
   }
 
   static void threeDimensionalArrays() {

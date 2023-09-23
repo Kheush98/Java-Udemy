@@ -34,6 +34,11 @@ class Student {
     boolean international; 
     double tuitionFee = 12000.0;
     double internationalFee = 5000.0;
+
+	Student(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 	
 	Student(int newId, String newName, String newGender, int newAge, short newRank, long newPhone, double newGpa, char newDegree) {
 		this(newId, newName, newGender, newAge, newRank, newPhone, newGpa, newDegree, false);

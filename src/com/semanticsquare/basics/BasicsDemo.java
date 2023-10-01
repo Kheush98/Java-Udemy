@@ -1,4 +1,4 @@
-  class BasicsDemo {
+class BasicsDemo {
     // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
     static void print() {
       System.out.println("\n\nInside print ...");
@@ -111,48 +111,6 @@
 	   System.out.println("list.length: " + list.length);
 	}	
 	
-	static void preAndPost() {
-		System.out.println("\nInside preAndPost ...");
-		
-		int x = 5;
-		
-		//--x;		
-		//System.out.println("x: " + x);	
-
-		//int y = x--;		
-		//System.out.println("y: " + y + ", x: " +  x);
-		
-		int index = 0;
-		int[] array = new int[3];
-		array[index++] = 10;		
-		array[index++] = 20;		
-		array[index++] = 30;
-		
-		System.out.println(index);
-	}
-	
-	
-	static void compoundArithmeticAssignment() {
-		int x = 100;
-		
-		System.out.println("x += 5: " + (x += 5));
-		System.out.println("x -= 5: " + (x -= 5));
-		System.out.println("x *= 5: " + (x *= 5));
-		System.out.println("x /= 5: " + (x /= 5));
-		System.out.println("x %= 5: " + (x %= 5));
-		
-		// Invalid
-		System.out.println("x =+ 5: " + (x =+ 5)); // Unary plus ~ x = +5
-		System.out.println("x =- 5: " + (x =- 5)); // Unary minus ~ x = -5
-		/*System.out.println("x =* 5: " + (x =* 5));
-		System.out.println("x =/ 5: " + (x =/ 5));
-		System.out.println("x =% 5: " + (x =% 5));*/
-	}
-	
-	static void isOddOrEven(int num) {
-		System.out.println(num % 2);
-	}
-	
 	static void charTypePromotion() {
 	  System.out.println("\nInside charTypePromotion ...");
 	  char char1 = 50; // Will be assigned corresponding UTF16 value 2
@@ -161,80 +119,6 @@
 	  System.out.println("(char1 - '3'): " + (char1 - '3')); // char1 & '3' are promoted to ints	
 	  System.out.println("('a' + 'b'): " + ('a' +'b')); // 'a' & 'b' are promoted to ints and the respective equivalents 97 & 98 are added
     }
-	
-	// Comparison or Relational operators
-	static void comparisonOperators() {
-	    System.out.println("\nInside comparisonOperators ...");
-		int age = 20;
-	    /*if (age > 21) {
-			System.out.println("Graduate student");
-		}*/
-		System.out.println("age > 21: " + (age > 21));
-		System.out.println("age >= 21: " + (age >= 21));  
-		System.out.println("age < 21: " + (age < 21));
-		System.out.println("age <= 21: " + (age <= 21));	  
-		System.out.println("age == 21: " + (age == 21)); // equal to (equality operator)
-		System.out.println("age != 21: " + (age != 21)); // not equal to (equality operator)
-		
-		boolean isInternational = true;
-		//System.out.println("isInternational <= true: " + (isInternational <= true));  
-		System.out.println("isInternational == true: " + (isInternational == true)); 
-		System.out.println("isInternational != true: " + (isInternational != true));
-		
-		Student s1 = new Student(1000, "Dheeru");
-		Student s2 = new Student(1000, "Dheeru");
-		System.out.println("s1 == s2: " + (s1 == s2)); // See object class
-		System.out.println("s1 != s2: " + (s1 != s2));
-		
-		update(s1, "John");
-	}		
-	
-	static boolean update(Student s, String name) {
-	    if (s == null) {
-		   return false;
-		}
-		
-		s.name = name;		
-		return true;
-	}
-	
-	static void logicalOperators() {
-		System.out.println("\nInside logicalOperators ...");
-		int age = 37;
-	    int salary = 85000;
-	    boolean hasBadCredit = false;
-		
-		// 1. Core (AND, OR, NOT & Operator Chaining)
-	    
-	    if (age > 35 && salary > 90000 || !hasBadCredit) {
-	    	System.out.println("Loan approved!");
-	    } else {
-			System.out.println("Loan not approved!");
-		}
-		
-		// 2. 
-		//    (a) Left-associative ~ Order of grouping
-		//    (b) Associativity (a && b) && c = a && (b && c)
-		//    Applies to both && and ||
-		
-		
-		// 3. 
-		//    (a) Operator precedence of Logical Operators: Helps with ONLY grouping operations. Not order of execution. (! > && > ||)
-		
-		          // Other Examples: A && B || C && D = (A && B) || (C && D)
-				  //                 A && B && C || D = ((A && B) && C) || D
-		
-		
-		//    (b) Operator Precedence across logical, comparison and arithmetic
-		//          ! > arithmetic > comparison > &&, ||
-		//    See resources section for complete precedence rules
-		
-		// ALWAYS USE PARENTHESIS for READABILITY. Not everyone is aware of precedence rules
-		
-		// 4. Use && to avoid NullPointerException
-		Student s1 = new Student(1001, "Raj");
-		update(s1, "Dheeru");
-	}
 	
 	static void bitwiseOperators() {
 	    System.out.println("\nInside bitwiseOperators ...");
@@ -255,7 +139,37 @@
 		//double d1 = 3.14;
 		//double d2 = 5.15;
 		//System.out.println("d1 | d2: " + (d1 | d2));
-  }
+    }
+  
+    static void switchExample() {
+	    System.out.println("\nInside switchExample ...");
+	    int month = 3;
+	    switch (month) {
+		    case 1: System.out.println("January");
+	                break;
+		    case 2: System.out.println("February");
+	                break;
+	        case 3: System.out.println("March");
+	                break;
+		    default: System.out.println("April");
+	    }
+    }
+  
+    static void labeledBreak() {
+	    System.out.println("\nInside labeledBreak ...");
+	    int num = 0;
+		
+	    outermost: for (int i = 0; i < 10; i++) {
+	        for (int j = 0; j < 10; j++) {    
+	            if (i == 5 && j == 5) {
+	                break outermost;
+	            }
+	            num++;
+	        }
+	    }
+		
+	    System.out.println("num: " + num); // prints 55		
+    }
 		
 	public static void main(String[] args) {	
 	  // Language Basics 1
@@ -267,13 +181,9 @@
       /*varargsOverload(true, 1, 2, 3);
       varargsOverload(true, 1, 2, 3, 4, 5, 6, 7, 8);	  
       varargsOverload(true);*/
-	  
-	  //preAndPost();
-	  //compoundArithmeticAssignment();
-	  //isOddOrEven(51);
 	  //charTypePromotion();
-	  //comparisonOperators();
-      //logicalOperators();
-	  bitwiseOperators();
+	  //bitwiseOperators();
+	  //switchExample();
+	  labeledBreak();
     }       
   }

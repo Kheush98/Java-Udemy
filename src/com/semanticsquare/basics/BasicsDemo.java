@@ -1,3 +1,8 @@
+package com.semanticsquare.basics;
+
+import java.util.Date;
+import java.util.ArrayList;
+
 class BasicsDemo {
     // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
     static void print() {
@@ -184,6 +189,9 @@ class BasicsDemo {
 	  //charTypePromotion();
 	  //bitwiseOperators();
 	  //switchExample();
-	  labeledBreak();
+	  //labeledBreak();
+	  Date date;
+	  ArrayList list;
+	  java.sql.Date date2;
     }       
   }

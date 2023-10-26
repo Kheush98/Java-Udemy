@@ -219,26 +219,40 @@
 		System.out.println("\ns.substring(4): " + s.substring(4));
 		System.out.println("s.substring(4, 9): " + s.substring(4, 9));
 		
-		// Case conversions (Note: String is immutable. So, only a copy is returned)
+		// Case conversions
 		System.out.println("\ns.toUpperCase(): " + s.toUpperCase());
 		System.out.println("s.toLowerCase(): " + s.toLowerCase());
 		
 		System.out.println("\ns.trim(): " + s.trim()); // returns a copy of string after trimming any leading & trailing white spaces
 		
-		
-		// Replace (e.g., replace comma's with white-space)
+		// Replace
 		System.out.println("\ns.replaceAll(\"o\", \"r\"): " + s.replaceAll("o", "r"));
 		
-		// Split (e.g., split a document into words or split a line of text by tab or comma or white space)
+		// Split
 		System.out.println("\ns.split(\"o\"): ");
 		String[] sa = s.split("o");
 		for (String temp : sa) {
 			System.out.println(temp);
 		}
 		
-		// Static method (includes overloaded methods)
-		System.out.println("\nString.valueOf(1.3): " + String.valueOf(1.3));
+		System.out.println("\ns.valueOf(1.3): " + s.valueOf(1.3));
 	}
+	
+	static void stringPool() {
+	  System.out.println("\nInside stringPool ...");
+	  String s1 = "hello!";
+	  String s2 = "hello!";
+	  String s3 = "hello!".intern();
+	  String s4 = new String("hello!");	 
+	  String s5 = "lo!";
+
+      System.out.println("s1 == s2: " + (s1 == s2));
+      System.out.println("s1 == s3: " + (s1 == s3));
+      System.out.println("s1 == s4: " + (s1 == s4));
+      System.out.println("s1 == s4.intern(): " + (s1 == s4.intern()));
+      System.out.println("s1 == \"hel\" + \"lo!\": " + (s1 == "hel" + "lo!"));
+      System.out.println("s1 == \"hel\" + s5: " + (s1 == "hel" + s5));
+    }
 		
 	public static void main(String[] args) {	
 	  // Language Basics 1
@@ -257,6 +271,7 @@
 	  //labeledContinue();
       // import demo
       // package creation demo
-      stringExamples();	  
+      //stringExamples();	
+      stringPool();	  
     }       
   }

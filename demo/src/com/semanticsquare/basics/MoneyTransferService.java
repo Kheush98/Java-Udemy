@@ -1,3 +1,5 @@
+package com.semanticsquare.basics;
+
 class MoneyTransferService {
     CurrencyConverter cc = new CurrencyConverter();
 

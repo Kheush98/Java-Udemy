@@ -1,3 +1,5 @@
+package com.semanticsquare.basics;
+
 public class IRUtil {	
 
 	public static int getFrequencyCount(String term, String doc) {
